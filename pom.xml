@@ -33,11 +33,26 @@
         <maven.javadoc.plugin.version>2.10.3</maven.javadoc.plugin.version>
         
         <junit.version>4.12</junit.version>
+        <lombok.version>1.16.4</lombok.version>
         
     </properties>
     
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+    
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <type>jar</type>
+                <scope>provided</scope>
+            </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
@@ -111,7 +126,7 @@
                     <configuration>
                         <haltOnFailure>false</haltOnFailure>
                         <rules>
-                             Require a line coverage minimum of 80% for every class except 
+                            Require a line coverage minimum of 80% for every class except 
                             test classes 
                             <rule>
                                 <element>CLASS</element>
